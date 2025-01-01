@@ -1,3 +1,4 @@
+eval "$(thefuck --alias)"
 bggreen="[102m"
 bgblack="[40m"
 green="[92m"
@@ -34,5 +35,6 @@ alias mkexec="chmod +x"
 alias lookfor="yay -Q | rg"
 alias visudo="vi /etc/doas.conf"
 alias rr="rm -rf"
+alias eshell="emacs -nw --no-splash -f eshell"
 alias update="yay --noconfirm && flatpak update"
 alias scug='echo "(\_/)" && echo "|OxO|" && echo "(___)"'
