@@ -35,3 +35,4 @@ alias lookfor="yay -Q | rg"
 alias visudo="vi /etc/doas.conf"
 alias rr="rm -rf"
 alias update="yay --noconfirm && flatpak update"
+alias scug='echo "(\_/)" && echo "|OxO|" && echo "(___)"'
