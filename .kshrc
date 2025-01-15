@@ -4,7 +4,7 @@ bgblack="[40m"
 green="[92m"
 black="[30m"
 white="[0m"
-export PS1='${green}${black}${bggreen}${PWD##*/}${bgblack}${green}─> ${white}'
+PS1='${green}${black}${bggreen}if [[ "${PWD#$HOME}" != "$PWD" ]] then; print -n "~${PWD#$HOME}"; else; print -n "$PWD";fi;${bgblack}${green}─> ${white}'
 cd
 echo "Welcome to the Korn shell!"
 echo "Enjoy your stay :3"
