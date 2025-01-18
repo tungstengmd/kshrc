@@ -1,10 +1,15 @@
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 eval "$(thefuck --alias)"
-source ~/kshScripts/prompt.sh
+for FILE in ~/kshScripts/*
+do
+    source $FILE
+done
+
 cd
 echo "Welcome to the Korn shell!"
 echo "Enjoy your stay :3"
 eval "$(zoxide init ksh --cmd cd)"
-#---Git aliases---#
+#---aliases for git---#
 alias gc="git commit -a"
 alias git="hub"
 alias gl="git log --oneline --all --graph --decorate"
@@ -14,8 +19,9 @@ alias gco="git checkout"
 alias gs="git stash"
 alias gd="git diff"
 alias gr="git reset --hard HEAD"
-#---General aliases---#
+#---general aliases---#
 alias ls="lsd -A"
+alias la="lsd -lA"
 alias viksh="vim ~/.kshrc"
 alias ce="clear && exec ksh"
 alias nerdfetch="nerdfetch -c"
@@ -24,7 +30,6 @@ alias shit="fuck -y"
 alias whatbroke="sudo systemctl list-units --failed"
 alias huh="echo yeah..."
 alias mkexec="chmod +x"
-alias lookfor="yay -Q | rg"
 alias visudo="vim /etc/doas.conf"
 alias rr="rm -rf"
 alias eshell="emacs -nw --no-splash -f eshell"
