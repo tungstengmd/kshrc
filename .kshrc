@@ -4,7 +4,6 @@ for FILE in ~/kshScripts/*
 do
     source $FILE
 done
-
 cd
 echo "Welcome to the Korn shell!"
 echo "Enjoy your stay :3"
@@ -33,5 +32,5 @@ alias mkexec="chmod +x"
 alias visudo="vim /etc/doas.conf"
 alias rr="rm -rf"
 alias eshell="emacs -nw --no-splash -f eshell"
-alias update="sudo xbps-install -Syu && flatpak update"
+alias update="sudo xbps-install -Syu && flatpak update && brew upgrade"
 alias scug='echo "(\_/)" && echo "|OxO|" && echo "(___)"'
