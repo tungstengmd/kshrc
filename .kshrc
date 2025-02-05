@@ -7,7 +7,6 @@ done
 cd
 echo "Welcome to the Korn shell!"
 echo "Enjoy your stay :3"
-eval "$(zoxide init ksh --cmd cd)"
 #---aliases for git---#
 alias gc="git commit -a"
 alias git="hub"
@@ -26,11 +25,17 @@ alias ce="clear && exec ksh"
 alias nerdfetch="nerdfetch -c"
 alias cbl="cbonsai -l"
 alias shit="fuck -y"
-alias whatbroke="sudo systemctl list-units --failed"
+# alias whatbroke="sudo systemctl list-units --failed"
 alias huh="echo yeah..."
 alias mkexec="chmod +x"
 alias visudo="vim /etc/doas.conf"
 alias rr="rm -rf"
 alias eshell="emacs -nw --no-splash -f eshell"
-alias update="sudo xbps-install -Syu && flatpak update && brew upgrade"
+alias update="doas xbps-install -Syu && flatpak update && brew upgrade"
 alias scug='echo "(\_/)" && echo "|OxO|" && echo "(___)"'
+function servstart {
+    doas ln -s /etc/sv/"$1" /var/service/
+}
+function servstop {
+    doas rm /var/service/"$1"
+}
