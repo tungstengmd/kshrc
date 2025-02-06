@@ -33,9 +33,3 @@ alias rr="rm -rf"
 alias eshell="emacs -nw --no-splash -f eshell"
 alias update="doas xbps-install -Syu && flatpak update && brew upgrade"
 alias scug='echo "(\_/)" && echo "|OxO|" && echo "(___)"'
-function servstart {
-    doas ln -s /etc/sv/"$1" /var/service/
-}
-function servstop {
-    doas rm /var/service/"$1"
-}
