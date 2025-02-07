@@ -33,3 +33,7 @@ alias rr="rm -rf"
 alias eshell="emacs -nw --no-splash -f eshell"
 alias update="doas xbps-install -Syu && flatpak update && brew upgrade"
 alias scug='echo "(\_/)" && echo "|OxO|" && echo "(___)"'
+alias birthday="stat / | rg Birth"
+function rmbut {
+    command -x rm -rf -- !("$1")
+}
