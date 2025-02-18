@@ -1,4 +1,3 @@
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 eval "$(thefuck --alias)"
 for FILE in ~/kshScripts/*
 do
@@ -33,7 +32,7 @@ alias rr="rm -rf"
 alias eshell="emacs -nw --no-splash -f eshell"
 alias update="doas xbps-install -Syu && flatpak update && brew upgrade"
 alias scug='echo "(\_/)" && echo "|OxO|" && echo "(___)"'
-alias birthday="stat / | rg Birth"
+alias birthday="stat --format=%w / | cut -b -10"
 function rmbut {
     command -x rm -rf -- !("$1")
 }
