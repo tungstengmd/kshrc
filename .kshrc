@@ -36,7 +36,7 @@ alias birthday="stat --format=%w / | cut -b -10"
 function crap {
     su -c "$(history -p !!)" root
 }
-function nohup {
+function nhp {
 	nohup "$1" >/dev/null 2>&1 &
 }
 function rmbut {
