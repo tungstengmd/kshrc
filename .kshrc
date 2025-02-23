@@ -33,6 +33,7 @@ alias update="doas xbps-install -Su && flatpak update && brew upgrade"
 alias scug='echo "(\_/)" && echo "|OxO|" && echo "(___)"'
 alias birthday="stat --format=%w / | cut -b -10"
 alias sudo="doas"
+alias rm="gomi"
 function crap {
     su -c "$(history -p !!)" root
 }
@@ -40,6 +41,6 @@ function nhp {
     nohup "$1" >/dev/null 2>&1 &
 }
 function rmbut {
-    command -x rm -rf -- !("$1..$100")
+    command -x rm -rf -- !("$1")
 }
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
