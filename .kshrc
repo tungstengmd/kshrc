@@ -3,7 +3,6 @@ for FILE in ~/kshScripts/*
 do
     source $FILE
 done
-cd
 echo "Welcome to the Korn shell!"
 echo "Enjoy your stay :3"
 #---aliases for git---#
@@ -30,16 +29,17 @@ alias mkexec="chmod +x"
 alias visudo="doas vim /etc/doas.conf"
 alias rr="rm -rf"
 alias eshell="emacs -nw --no-splash -f eshell"
-alias update="doas xbps-install -Syu && flatpak update && brew upgrade"
+alias update="doas xbps-install -Su && flatpak update && brew upgrade"
 alias scug='echo "(\_/)" && echo "|OxO|" && echo "(___)"'
 alias birthday="stat --format=%w / | cut -b -10"
+alias sudo="doas"
 function crap {
     su -c "$(history -p !!)" root
 }
 function nhp {
-	nohup "$1" >/dev/null 2>&1 &
+    nohup "$1" >/dev/null 2>&1 &
 }
 function rmbut {
-    command -x rm -rf -- !("$1")
+    command -x rm -rf -- !("$1..$100")
 }
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
