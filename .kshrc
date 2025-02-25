@@ -16,8 +16,8 @@ alias gs="git stash"
 alias gd="git diff"
 alias gr="git reset --hard HEAD"
 #---general aliases---#
-alias ls="lsd -A"
-alias la="lsd -lA"
+alias ls="g -A --git --icon"
+alias la="g -l -A --git --icon --table"
 alias viksh="vim ~/.kshrc"
 alias ce="clear && exec ksh"
 alias nerdfetch="nerdfetch -c"
@@ -38,9 +38,9 @@ function crap {
     su -c "$(history -p !!)" root
 }
 function nhp {
-    nohup "$1" >/dev/null 2>&1 &
+    nohup "$f" >/dev/null 2>&1 &
 }
 function rmbut {
-    command -x rm -rf -- !("$1")
+	\ls -1 | egrep -v "("$@")" | xargs rm -rf
 }
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
