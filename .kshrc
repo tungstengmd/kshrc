@@ -1,3 +1,5 @@
+set -o vi
+export FCEDIT=micro
 eval "$(thefuck --alias)"
 for FILE in ~/kshScripts/*
 do
