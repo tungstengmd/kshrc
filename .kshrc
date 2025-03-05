@@ -1,4 +1,3 @@
-set -o vi
 export FCEDIT=micro
 eval "$(thefuck --alias)"
 for FILE in ~/kshScripts/*
@@ -36,6 +35,8 @@ alias scug='echo "(\_/)" && echo "|OxO|" && echo "(___)"'
 alias birthday="stat --format=%w / | cut -b -10"
 alias sudo="doas"
 alias rm="gomi"
+alias sftrbt="pkill xinit"
+alias wttr="curl wttr.in/?format=1 2>/dev/null | sed 's/\ \ \ /\ /'"
 function crap {
     su -c "$(history -p !!)" root
 }
