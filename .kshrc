@@ -1,3 +1,4 @@
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 export FCEDIT=micro
 eval "$(thefuck --alias)"
 for FILE in ~/kshScripts/*
@@ -46,4 +47,3 @@ function nhp {
 function rmbut {
 	\ls -1 | egrep -v "("$@")" | xargs rm -rf
 }
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
