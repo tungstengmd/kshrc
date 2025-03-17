@@ -1,0 +1,18 @@
+#!/bin/ksh
+echo what prompt do you wish to use?
+set -a prompts
+i=0
+for FILE in ~/kshprompts/*
+do
+    source $FILE
+    echo ${FILE##*/}
+    echo $prompt
+    prompts[$i]="${FILE##*/}"
+    i=i+1
+done
+read desire
+if [ "${prompts[*]}" = "$desire" ]; then
+    echo "$(cat ~/kshprompts/$desire | sed 's/prompt/PS1/g')" >> ~/kshScripts/prompt.sh
+else
+    echo invalid :c
+fi
