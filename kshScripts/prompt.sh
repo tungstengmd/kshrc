@@ -1,2 +1,1 @@
-time="$(date +%H):$(date +%M)"
-PS1=$(printf '\033[92m╭─{owo}─{${time}} ${USER} in \033[30m\033[102m${PWD##*/}\033[40m\033[92m\n\033[92m╰──> \033[0m')
+PS1='$(printf "\033[92m╭─{owo}─{"$(date +%H):$(date +%M)"} ${USER} in \033[30m\033[102m${PWD##*/}\033[40m\033[92m $([ "$(git status >/dev/null 2>&1; echo $?)" = 0 ] && echo "($(git branch --show-current))")\n$([ $? = 0 ] && echo "\033[92m" || echo "\033[91m")╰──> \033[0m")'
