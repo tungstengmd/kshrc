@@ -1,3 +1,4 @@
+eval $(ssh-agent -s &>/dev/null)
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 export FCEDIT=micro
 eval "$(thefuck --alias)"
@@ -36,7 +37,9 @@ alias scug='echo "(\_/)" && echo "|OxO|" && echo "(___)"'
 alias birthday="stat --format=%w / | cut -b -10"
 alias sudo="doas"
 alias rm="gomi"
+alias doas="doas "
 alias sftrbt="pkill xinit"
+alias wtf="netbsd-wtf"
 alias wttr="curl wttr.in/?format=1 2>/dev/null | sed 's/\ \ \ /\ /'"
 function crap {
     su -c "$(history -p !!)" root
